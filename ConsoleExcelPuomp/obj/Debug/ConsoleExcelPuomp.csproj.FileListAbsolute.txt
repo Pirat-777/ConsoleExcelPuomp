@@ -1,0 +1,8 @@
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\bin\Debug\ConsoleExcelPuomp.exe.config
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\bin\Debug\ConsoleExcelPuomp.exe
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\bin\Debug\ConsoleExcelPuomp.pdb
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.exe
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.pdb
+C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csproj.ResolveComReference.cache
