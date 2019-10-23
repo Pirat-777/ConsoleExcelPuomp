@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,14 +19,14 @@ namespace ConsoleExcelPuomp
 
         public void Run()
         {
-            
-
             // Создаём экземпляр нашего приложения
             Excel.Application excelApp = new Excel.Application();
             // Создаём экземпляр рабочий книги Excel
             Excel.Workbook workBook;
             // Создаём экземпляр листа Excel
             Excel.Worksheet workSheet;
+
+            Directory.CreateDirectory("C:\\Temp");
 
             string file = "";
             foreach (var item in res)
@@ -61,9 +62,11 @@ namespace ConsoleExcelPuomp
                     workSheet.Cells[i + 1, 8] = item[i - 1][5];
                     workSheet.Cells[i + 1, 9] = "\'" + item[i - 1][1];
                     workSheet.Cells[i + 1, 10] = "\'" + item[i - 1][2];
-                }                
+                }
+
+                Console.WriteLine($"\nСохранение {file} в C:\\Temp\\");
                 workBook.SaveAs($"C:\\Temp\\{file}");
-                workBook.Close();
+                workBook.Close();                
             }            
         }
 
