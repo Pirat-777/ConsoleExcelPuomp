@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -12,9 +13,9 @@ namespace ConsoleExcelPuomp
     class ExcelProc
     {
         private Excel.Application xlApp; //Excel
-        private Excel.Workbook xlWB; //рабочая книга            
-        private Excel.Worksheet xlSht; //лист Excel            
-        private Excel.Range Rng; //диапазон ячеек  
+        public Excel.Workbook xlWB; //рабочая книга            
+        public Excel.Worksheet xlSht; //лист Excel            
+        public Excel.Range Rng; //диапазон ячеек  
         private string file;
 
         public ExcelProc(string file, int WorksheetNum = 1)
@@ -27,54 +28,9 @@ namespace ConsoleExcelPuomp
             this.xlSht = xlWB.Worksheets[WorksheetNum];
         }
 
-        public void Run()
+        public Dictionary<int, int> Run()
         {
-            IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
-
-            foreach (KeyValuePair<int, int> keyValue in GetStartEndPair())
-            {
-                Console.WriteLine(xlSht.Range["E"+ (3 + keyValue.Key)].Text);
-                Console.WriteLine(xlSht.Range["G" + (3 + keyValue.Key)].Text);
-                int loop = keyValue.Value - (keyValue.Key + 2);
-
-                foreach (KeyValuePair<string, string[]> item in GetSmoKode(
-                                                                    xlSht.Range["E" + (3 + keyValue.Key)].Text +
-                                                                    xlSht.Range["G" + (3 + keyValue.Key)].Text
-                                                                )
-                    )
-                {
-                    Console.WriteLine(item.Key);
-                    Console.WriteLine(loop);
-                    for (int i = 6; i <= loop; i++)
-                    {
-                        Console.WriteLine(xlSht.Range["B" + (keyValue.Key + i)].Text);
-
-                        foreach (var subItem in item.Value)
-                        {
-                            Console.WriteLine(                                
-                                    int.TryParse(xlSht.Range[subItem + (keyValue.Key + i)].Text.Replace(" ", ""), out int resE) ? resE : 0
-                                );
-                        }  
-                    }
-                }
-                //Console.WriteLine(keyValue.Key + " - " + keyValue.Value);
-            }            
-        }
-
-        private Dictionary<string, string[]> GetSmoKode(string SMOName)
-        {
-            Dictionary<string, string[]> mass = new Dictionary<string, string[]>();
-
-            if (SMOName.ToUpper().Contains("КАПИТАЛ"))
-            {
-                mass.Add( "07004", new string[] {"E", "F"} );
-            }
-
-            if (SMOName.ToUpper().Contains("РЕСО"))
-            {
-                mass.Add("07005", new string[] { "G", "H" });
-            }
-            return mass;
+            return GetStartEndPair();            
         }
 
         private Dictionary<int, int> GetStartEndPair()

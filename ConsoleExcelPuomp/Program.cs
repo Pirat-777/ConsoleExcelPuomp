@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,17 +16,18 @@ namespace ConsoleExcelPuomp
         {
             Console.Title = "Excel2PuompImportExcel v." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             try
-            {               
+            {
                 dynamic file = Dialog.FileBrowser();
 
                 if (file.GetType() == typeof(string) ? file.Length > 0 : false)
                 {
-                    var excel = new ExcelProc(file);
-                    excel.Run();
-                } else if (file.GetType() == typeof(bool) ? true : false) {
+                    new Import2Excel(new ExcelExp().Run(file)).Run();
+                }
+                else if (file.GetType() == typeof(bool) ? true : false)
+                {
                     Console.WriteLine($"Файл не выбран!");
                 }
-                Console.WriteLine($"Готово!");
+                Console.WriteLine($"\nРезультат: выполнено.");
             }
             catch (Exception ex)
             {
@@ -33,9 +35,9 @@ namespace ConsoleExcelPuomp
             }
             finally
             {
-                Console.WriteLine($"\nнажмите любую клавишу...");
+                Console.WriteLine($"\nДля закрытия нажмите любую клавишу...");
                 Console.ReadKey();
             }            
-        }
+        }        
     }
 }

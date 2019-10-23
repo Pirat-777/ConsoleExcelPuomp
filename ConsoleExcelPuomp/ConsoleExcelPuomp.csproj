@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialog.cs" />
+    <Compile Include="ExcelExp.cs" />
     <Compile Include="ExcelProc.cs" />
+    <Compile Include="Import2Excel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

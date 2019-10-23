@@ -6,3 +6,11 @@ C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\Consol
 C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.exe
 C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.pdb
 C:\Users\admin\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csproj.ResolveComReference.cache
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\bin\Debug\ConsoleExcelPuomp.exe.config
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\bin\Debug\ConsoleExcelPuomp.exe
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\bin\Debug\ConsoleExcelPuomp.pdb
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csprojAssemblyReference.cache
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csproj.ResolveComReference.cache
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.csproj.CoreCompileInputs.cache
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.exe
+D:\source\repos\ConsoleExcelPuomp\ConsoleExcelPuomp\obj\Debug\ConsoleExcelPuomp.pdb
