@@ -26,7 +26,8 @@ namespace ConsoleExcelPuomp
             // Создаём экземпляр листа Excel
             Excel.Worksheet workSheet;
 
-            Directory.CreateDirectory("C:\\Temp");
+            Directory.CreateDirectory(Environment.CurrentDirectory+"\\Результат");
+            string pathSave = Environment.CurrentDirectory + "\\Результат\\";
 
             string file = "";
             foreach (var item in res)
@@ -50,7 +51,7 @@ namespace ConsoleExcelPuomp
                 {
                     Console.WriteLine($"{item[i - 1][1]}, {item[i - 1][2]}, {item[i - 1][3]}, {item[i - 1][4]}, {item[i - 1][5]}");
 
-                    file = item[i - 1][1] + "_" + item[i - 1][2] + "_" + item[i - 1][0] + ".xlsx";                   
+                    file = item[i - 1][1] + "_" + item[i - 1][2] + "_" + item[i - 1][0] + ".xls";                   
 
                     workSheet.Cells[i + 1, 1] = GetVidMH(item[i - 1][3])[0];
                     workSheet.Cells[i + 1, 2] = GetVidMH(item[i - 1][3])[1];
@@ -64,9 +65,10 @@ namespace ConsoleExcelPuomp
                     workSheet.Cells[i + 1, 10] = "\'" + item[i - 1][2];
                 }
 
-                Console.WriteLine($"\nСохранение {file} в C:\\Temp\\");
-                workBook.SaveAs($"C:\\Temp\\{file}");
-                workBook.Close();                
+                Console.WriteLine($"\nСохранение {file} в {pathSave}");
+                workBook.SaveAs($"{pathSave+file}", Excel.XlFileFormat.xlExcel8);
+                workBook.Close();
+                excelApp.Quit();
             }            
         }
 
@@ -79,7 +81,7 @@ namespace ConsoleExcelPuomp
             if (GetClearStr(str).Contains("РЕАБИЛИТАЦИЯЗСЛ"))
                 return new string[] { "КССВОД", "", "1", "0", "0" };
             if (GetClearStr(str).Contains("ВМПЗСЛ"))
-                return new string[] { "ВМП", "", "", "", "" };
+                return new string[] { "ВМП", "99", "", "", "" };
             if (GetClearStr(str).Contains("ДНЕВНОЙСТАЦИОНАРКСГ"))
                 return new string[] { "ДССВОД", "", "", "", "" };
             if (GetClearStr(str).Contains("ОНКОЛОГИЯДНСТАЦИОНАР"))
