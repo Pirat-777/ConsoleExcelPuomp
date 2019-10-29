@@ -46,6 +46,8 @@ namespace ConsoleExcelPuomp
                 workSheet.Cells[1, 8] = "сумма";
                 workSheet.Cells[1, 9] = "мо";
                 workSheet.Cells[1, 10] = "смо";
+                workSheet.Cells[1, 11] = "дата протокола";
+                workSheet.Cells[1, 12] = "номер протокола";
 
                 for (int i = 1; i <= item.Length; i++)
                 {
@@ -63,6 +65,8 @@ namespace ConsoleExcelPuomp
                     workSheet.Cells[i + 1, 8] = item[i - 1][5];
                     workSheet.Cells[i + 1, 9] = "\'" + item[i - 1][1];
                     workSheet.Cells[i + 1, 10] = "\'" + item[i - 1][2];
+                    workSheet.Cells[i + 1, 11] = Program.protocolDate;
+                    workSheet.Cells[i + 1, 12] = Program.protocolNum;                    
                 }
 
                 Console.WriteLine($"\nСохранение {file} в {pathSave}");
