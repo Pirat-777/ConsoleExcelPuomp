@@ -11,6 +11,9 @@ namespace ConsoleExcelPuomp
 {
     class Program
     {
+        public static string protocolDate;
+        public static string protocolNum;
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -21,6 +24,11 @@ namespace ConsoleExcelPuomp
 
                 if (file.GetType() == typeof(string) ? file.Length > 0 : false)
                 {
+                    Console.Write($"Введите номер протокола: ");
+                    protocolNum = Console.ReadLine();
+                    Console.Write($"Введите дату протокола: ");
+                    protocolDate = Console.ReadLine();
+
                     new Import2Excel(new ExcelExp().Run(file)).Run();
                 }
                 else if (file.GetType() == typeof(bool) ? true : false)
