@@ -46,8 +46,8 @@ namespace ConsoleExcelPuomp
                 workSheet.Cells[1, 8] = "сумма";
                 workSheet.Cells[1, 9] = "мо";
                 workSheet.Cells[1, 10] = "смо";
-                workSheet.Cells[1, 11] = "дата протокола";
-                workSheet.Cells[1, 12] = "номер протокола";
+                workSheet.Cells[1, 11] = "ДАТА ДОК";
+                workSheet.Cells[1, 12] = "ПРОТОКОЛ";
 
                 for (int i = 1; i <= item.Length; i++)
                 {
