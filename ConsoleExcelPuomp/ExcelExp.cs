@@ -22,6 +22,7 @@ namespace ConsoleExcelPuomp
             IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
                         
             List<string[][]> listMass = new List<string[][]>();
+            int nn = 0;
             foreach (KeyValuePair<int, int> keyValue in pair.Run())
             {
                 string dt = DateTime.Now.ToString("yyyyMMdd_hhmmss");
@@ -29,18 +30,20 @@ namespace ConsoleExcelPuomp
                 var smokode = GetSmoKode(
                                         pair.xlSht.Range["E" + (3 + keyValue.Key)].Text +
                                         pair.xlSht.Range["G" + (3 + keyValue.Key)].Text);
-
+                Console.WriteLine($"\nБлок № {++nn}:");
                 foreach (KeyValuePair<string, string[]> item in smokode)
                 {                    
                     smo = item.Key;
                     mo = pair.xlSht.Range["B" + keyValue.Key].Text.Trim();
-                    moCode = mo.Substring(0, 6).Trim();
+                    moCode = new String(mo.Where(Char.IsDigit).ToArray()).Length >= 6 ? mo.Substring(0, 6).Trim():"";
+                    
                     if (moCode.Length != 6)
                     {
                         pair.xlWB.Close();
-                        throw new Exception($"\nОшибка: не указан или неверный код мо для: \"{mo}\"");
+                        throw new Exception($"\nОшибка: не указан или неверный код МО (см. ячейку {"B" + keyValue.Key}): \"{mo}\"");
                     }
-                    
+
+                    Console.WriteLine($"Обработка MO: {mo}, SMO: {smo},");
                     string[][] newMass = new string[loop-5][];
                     for (int i = 6; i <= loop; i++)
                     {
@@ -57,7 +60,7 @@ namespace ConsoleExcelPuomp
                         //Console.WriteLine($"{dt}, МО:{moCode}, СМО:{smo}, Вид:{vidMedHelp},Кол-во:{cnt},Сумма:{summ}");
                         newMass[i-6] = new string[6] { dt, moCode, smo, vidMedHelp, cnt, summ };
                     }                    
-                    listMass.Add(newMass);
+                    listMass.Add(newMass);                    
                 }                
             }            
             pair.xlWB.Close();            
