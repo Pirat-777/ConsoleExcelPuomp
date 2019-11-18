@@ -99,7 +99,7 @@ namespace ConsoleExcelPuomp
             if (GetClearStr(str).Contains("ОБРАЩЕНИЯ"))
                 return new string[] { "АМБ", "11", "", "", "" };
             if (GetClearStr(str).Contains("ПРОФИЛАКТИЧЕСКИЕПОСЕЩЕНИЯРАЗОВЫЕ"))
-                return new string[] { "АМБ", "8", "", "", "" };
+                return new string[] { "АМБ", "10", "", "", "" };
             if (GetClearStr(str).Contains("ПОДУШЕВОЕФИНАНСИРОВАНИЕ"))
                 return new string[] { "АМБ", "35", "", "", "" };
             if (GetClearStr(str).Contains("ДИАГНОСТИЧЕСКИЕПОСЕЩЕНИЯ"))
