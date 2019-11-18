@@ -101,7 +101,7 @@ namespace ConsoleExcelPuomp
             if (GetClearStr(str).Contains("ПРОФИЛАКТИЧЕСКИЕПОСЕЩЕНИЯРАЗОВЫЕ"))
                 return new string[] { "АМБ", "8", "", "", "" };
             if (GetClearStr(str).Contains("ПОДУШЕВОЕФИНАНСИРОВАНИЕ"))
-                return new string[] { "ПДФ", "", "", "", "" };
+                return new string[] { "АМБ", "35", "", "", "" };
             if (GetClearStr(str).Contains("ДИАГНОСТИЧЕСКИЕПОСЕЩЕНИЯ"))
                 return new string[] { "АМБ", "34", "", "", "" };
             if (GetClearStr(str).Contains("ДИАЛИЗВУСЛАПП"))
@@ -127,13 +127,7 @@ namespace ConsoleExcelPuomp
             if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ1ЫЙЭТЗСЛ12"))
                 return new string[] { "АМБ", "27", "", "", "" };
             if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ2ОЙЭТЗСЛ"))
-                return new string[] { "АМБ", "7", "", "", "" };
-            if (GetClearStr(str).Contains("ПРОФОСМОТРВЗРОСЛЫХЗСЛ"))
-                return new string[] { "АМБ", "8", "", "", "" };
-            if (GetClearStr(str).Contains("МЕДОСМОТРНЕСОВЕРШЕННОЛЕТНИХ1ЭТЗСЛ"))
-                return new string[] { "АМБ", "3", "", "", "" };
-            if (GetClearStr(str).Contains("МЕДОСМОТРНЕСОВЕРШЕННОЛЕТНИХ2ЭТЗСЛ"))
-                return new string[] { "АМБ", "28", "", "", "" };
+                return new string[] { "АМБ", "7", "", "", "" };            
             if (GetClearStr(str).Contains("СКОРАЯСПЕЦМЕДПОМОЩЬПОДУШНОР"))
                 return new string[] { "СМП", "16", "", "", "" };
 
