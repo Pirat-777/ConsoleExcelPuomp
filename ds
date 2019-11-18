@@ -1,0 +1,67 @@
+[33mcommit c69d28757905fa274fbdf7a414af23fda96a5a30[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 7fa8059 66d2aaf
+Author: UArt22 <help-mega@mail.ru>
+Date:   Thu Oct 31 16:41:17 2019 +0300
+
+    up1.0.4.0
+
+[33mcommit 7fa805924430ec9e44a281ef098c877c27a65a60[m
+Merge: d8bf886 0a04b30
+Author: UArt22 <help-mega@mail.ru>
+Date:   Thu Oct 31 14:45:05 2019 +0300
+
+    up
+
+[33mcommit 66d2aafb25c2365b2f32e594f2379beb544d634a[m
+Author: PIRAT-777 <git.hub@bk.ru>
+Date:   Thu Oct 31 14:43:50 2019 +0300
+
+    up
+
+[33mcommit 51c26115d2d61b692c42de4cdfc2343a578eda16[m
+Author: PIRAT-777 <git.hub@bk.ru>
+Date:   Thu Oct 31 14:41:29 2019 +0300
+
+    up
+
+[33mcommit d8bf88687e27aa6aee67b186153a491992e17952[m
+Author: UArt22 <help-mega@mail.ru>
+Date:   Thu Oct 31 14:38:52 2019 +0300
+
+    before pull
+
+[33mcommit 0a04b30e5bbaafddf9b625c152d33c28ebb00cba[m
+Author: PIRAT-777 <git.hub@bk.ru>
+Date:   Tue Oct 29 11:37:40 2019 +0300
+
+    добавлен ввод даты и номера протокола
+
+[33mcommit 84470a7ce52651652dd6b1e4e8750797fb10d4d8[m
+Author: PIRAT-777 <git.hub@bk.ru>
+Date:   Fri Oct 25 10:36:41 2019 +0300
+
+    добавлен код ВМП = 99, вых. файл с расширения xlsx сохраняется на xls 97-2003
+
+[33mcommit 63ef9583f5ec68b36c1073619b7c565dee5fe968[m
+Author: PIRAT-777 <git.hub@bk.ru>
+Date:   Fri Oct 25 10:35:36 2019 +0300
+
+    добавлен код ВМП = 99, вых. файл с расширения xlsx сохраняется на xls 97-2003
+
+[33mcommit 1c47e9cc403b71cb0d3fc5c3ec81b75938739b2a[m
+Author: UArt22 <help-mega@mail.ru>
+Date:   Wed Oct 23 17:48:28 2019 +0300
+
+    папка для сохранения вых. xlsx создаётся, если её нет
+
+[33mcommit 04ffa49d16a02cf7462af4c88064ee08d5cc35a9[m
+Author: UArt22 <help-mega@mail.ru>
+Date:   Wed Oct 23 17:20:45 2019 +0300
+
+    first ok
+
+[33mcommit e196f7ec646fbf1aeb589b50f39a39b2245d9580[m
+Author: UArt22 <help-mega@mail.ru>
+Date:   Tue Oct 22 19:37:35 2019 +0300
+
+    first commit
