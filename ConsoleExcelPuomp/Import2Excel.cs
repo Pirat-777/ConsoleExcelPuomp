@@ -78,7 +78,7 @@ namespace ConsoleExcelPuomp
 
         private string[] GetVidMH(string str)
         {            
-            if (GetClearStr(str).Contains("СТАЦИОНАРКСГ"))
+            if (GetClearStr(str).Contains("1СТАЦИОНАРКСГ"))
                 return new string[] { "КССВОД", "", "", "", "" };
             if (GetClearStr(str).Contains("ОНКОЛОГИЯСТАЦИОНАР"))
                 return new string[] { "КССВОД", "", "0", "0", "1" };
