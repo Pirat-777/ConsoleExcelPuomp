@@ -30,7 +30,7 @@ namespace ConsoleExcelPuomp
                 var smokode = GetSmoKode(
                                         pair.xlSht.Range["E" + (3 + keyValue.Key)].Text +
                                         pair.xlSht.Range["G" + (3 + keyValue.Key)].Text);
-                Console.WriteLine($"\nБлок № {++nn}:");
+                Console.WriteLine($"\nЧитаем из документа блок № {++nn}:");
                 foreach (KeyValuePair<string, string[]> item in smokode)
                 {                    
                     smo = item.Key;

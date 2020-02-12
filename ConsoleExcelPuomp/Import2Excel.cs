@@ -30,6 +30,7 @@ namespace ConsoleExcelPuomp
             string pathSave = Environment.CurrentDirectory + "\\Результат\\";
 
             string file = "";
+            int iter = 0;
             foreach (var item in res)
             {     
                 workBook = excelApp.Workbooks.Add();
@@ -69,7 +70,7 @@ namespace ConsoleExcelPuomp
                     workSheet.Cells[i + 1, 12] = Program.protocolNum;                    
                 }
 
-                Console.WriteLine($"\nСохранение {file} в {pathSave}");
+                Console.WriteLine($"\n***{++iter} из {res.Count}\nСохранение {file}  в {pathSave}");
                 workBook.SaveAs($"{pathSave+file}", Excel.XlFileFormat.xlExcel8);
                 workBook.Close();
                 excelApp.Quit();
@@ -77,60 +78,14 @@ namespace ConsoleExcelPuomp
         }
 
         private string[] GetVidMH(string str)
-        {            
-            if (GetClearStr(str).Contains("1СТАЦИОНАРКСГ"))
-                return new string[] { "КССВОД", "", "", "", "" };
-            if (GetClearStr(str).Contains("ОНКОЛОГИЯСТАЦИОНАР"))
-                return new string[] { "КССВОД", "", "0", "0", "1" };
-            if (GetClearStr(str).Contains("РЕАБИЛИТАЦИЯЗСЛ"))
-                return new string[] { "КССВОД", "", "1", "0", "0" };
-            if (GetClearStr(str).Contains("ВМПЗСЛ"))
-                return new string[] { "ВМП", "99", "", "", "" };
-            if (GetClearStr(str).Contains("ДНЕВНОЙСТАЦИОНАРКСГ"))
-                return new string[] { "ДССВОД", "", "", "", "" };
-            if (GetClearStr(str).Contains("ОНКОЛОГИЯДНСТАЦИОНАР"))
-                return new string[] { "ДССВОД", "", "0", "0", "1" };
-            if (GetClearStr(str).Contains("ДИАЛИЗВУСЛДНСТАЦИОНАРАУСЛУГА"))
-                return new string[] { "АМБ", "24", "", "", "" };
-            if (GetClearStr(str).Contains("ЭКО"))
-                return new string[] { "ДССВОД", "", "0", "1", "0" };
-            if (GetClearStr(str).Contains("НЕОТЛОЖНЫЕПОСЕЩЕНИЯ"))
-                return new string[] { "АМБ", "9", "", "", "" };
-            if (GetClearStr(str).Contains("ОБРАЩЕНИЯ"))
-                return new string[] { "АМБ", "11", "", "", "" };
-            if (GetClearStr(str).Contains("ПРОФИЛАКТИЧЕСКИЕПОСЕЩЕНИЯРАЗОВЫЕ"))
-                return new string[] { "АМБ", "10", "", "", "" };
-            if (GetClearStr(str).Contains("ПОДУШЕВОЕФИНАНСИРОВАНИЕ"))
-                return new string[] { "АМБ", "35", "", "", "" };
-            if (GetClearStr(str).Contains("ДИАГНОСТИЧЕСКИЕПОСЕЩЕНИЯ"))
-                return new string[] { "АМБ", "34", "", "", "" };
-            if (GetClearStr(str).Contains("ДИАЛИЗВУСЛАПП"))
-                return new string[] { "АМБ", "23", "", "", "" };
-            if (GetClearStr(str).Contains("СТОМАТОЛОГИЧЕСКАЯПОМОЩЬУЕТ"))
-                return new string[] { "АМБ", "26", "", "", "" };
-            if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯДЕТЕЙСИРОТЗСЛ"))
-                return new string[] { "АМБ", "1", "", "", "" };
-            if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ1ЫЙЭТАПЗСЛ"))
-                return new string[] { "АМБ", "6", "", "", "" };
-            if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ2ОЙЭТАПЗСЛ"))
-                return new string[] { "АМБ", "7", "", "", "" };
-            if (GetClearStr(str).Contains("ПРОФОСМОТРВЗРОСЛЫХЗСЛ"))
-                return new string[] { "АМБ", "8", "", "", "" };
-            if (GetClearStr(str).Contains("МЕДОСМОТРНЕСОВЕРШЕННОЛЕТНИХ1ЭТЗСЛ"))
-                return new string[] { "АМБ", "3", "", "", "" };
-            if (GetClearStr(str).Contains("МЕДОСМОТРНЕСОВЕРШЕННОЛЕТНИХ2ЭТЗСЛ"))
-                return new string[] { "АМБ", "28", "", "", "" };
-            if (GetClearStr(str).Contains("СКОРАЯСПЕЦМЕДПОМОЩЬПОДУШНОР"))
-                return new string[] { "СМП", "16", "", "", "" };
-            if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ1ЫЙЭТЗСЛ13"))
-                return new string[] { "АМБ", "6", "", "", "" };
-            if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ1ЫЙЭТЗСЛ12"))
-                return new string[] { "АМБ", "27", "", "", "" };
-            if (GetClearStr(str).Contains("ДИСПАНСЕРИЗАЦИЯВЗРОСЛЫХ2ОЙЭТЗСЛ"))
-                return new string[] { "АМБ", "7", "", "", "" };            
-            if (GetClearStr(str).Contains("СКОРАЯСПЕЦМЕДПОМОЩЬПОДУШНОР"))
-                return new string[] { "СМП", "16", "", "", "" };
-
+        {
+            foreach (var item in Program.settingsData)
+            {
+                if (GetClearStr(str).Contains(item.Key) || str.Contains(item.Key) )
+                {
+                    return item.Value;
+                }
+            }
             return new string[] { "","","","","","","" };
         }
         private string GetClearStr(string str)
